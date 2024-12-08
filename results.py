@@ -1,25 +1,27 @@
-from bs4 import BeautifulSoup
+""" This script extracts and prints the results of a competition from an HTML file. """
+
 import re
+from bs4 import BeautifulSoup
+from team import Team
+from competition import Competition
 
 # Load the HTML content
-# with open('/C:/Users/alexd/Documents/Projekte/GitHub/rwk_ergebnisse/output.html', 'r', encoding='utf-8') as file:
 with open('output.html', 'r', encoding='utf-8') as file:
     content = file.read()
 
 def print_result(cells: list):
-    home_team = cells[0].text.strip()
-    away_team = cells[1].text.strip()
-    result = cells[2].text.strip()
-    
-    if home_team.startswith("SV Wappersdorf") or away_team.startswith("SV Wappersdorf"):
-        print(f"{home_team} - {away_team} -> {result}")
+    """ Prints the result of a competition. """
+    comp = Competition(cells[0].text.strip(), cells[1].text.strip(), cells[2].text.strip())
+    if comp.check_team("SV Wappersdorf"):
+        print(comp)
 
 def get_league_name_from_table_header(header: str):
-    league_name = re.search(r'Tabelle der (.*?) ------', header).group(1)
-    return (league_name)  # Output: Gauliga 1
+    """ Extracts the league name from the given table header """
+    return re.search(r'Tabelle der (.*?) ------', header).group(1)
 
-def print_groups_for_team(soup, team_name):
-    tables = soup.find_all('table', {'style': 'width:100%'})
+def print_groups_for_team(parsed_html: BeautifulSoup, team_name):
+    """ Prints the groups for the given team. """
+    tables = parsed_html.find_all('table', {'style': 'width:100%'})
     for table in tables:
         header = table.find('th', colspan="3")
         if header:
@@ -33,6 +35,7 @@ def print_groups_for_team(soup, team_name):
                         print(team)
 
 def get_team_info(soup):
+    """ Extracts and prints the team information from the given HTML content. """
     tables = soup.find_all('table', {'style': 'width:100%'})
     for table in tables:
         header = table.find('th', colspan="3")
@@ -48,8 +51,7 @@ def get_team_info(soup):
                         team_name = team.split(".")[1]
                         points = cells[1].text.strip()
                         cut = cells[2].text.strip()
-                        print(f"[{league}] \t {team_name} \t {placement}. Platz \t {points} - {cut}")
-    
+                        print(Team(league, team_name, int(placement), points, cut))
 
 # Parse the HTML content with BeautifulSoup
 soup = BeautifulSoup(content, 'html.parser')
