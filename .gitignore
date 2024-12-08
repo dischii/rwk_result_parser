@@ -163,3 +163,4 @@ cython_debug/
 
 # generated files
 output.html
+report_file.xlsx

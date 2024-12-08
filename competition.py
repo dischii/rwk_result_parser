@@ -13,6 +13,10 @@ class Competition:
 
     def __str__(self):
         return f"{self.home_team} - {self.away_team} -> {self.result}"
+    
+    def to_list(self):
+        """ Returns the competition as a list. """
+        return [self.home_team, self.away_team, self.home_score, self.away_score]
 
     def check_team(self, team_name: str):
         """ Checks if the given team is part of the competition. 
