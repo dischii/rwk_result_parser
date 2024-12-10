@@ -1,5 +1,6 @@
+""" This module creates a report file in xlsx format. """ 
+
 import xlsxwriter
-import functools
 
 import xlsxwriter.worksheet
 from competition import Competition
@@ -18,7 +19,6 @@ team = Team("league", "name", 1, "points", "cut")
 def report_competition(ws: xlsxwriter.worksheet, start_row: int, comp_list: list):
     """ Returns the competition as a list. """
     row = start_row
-    iteration = 0
     col = 0 
 
     for comp in comp_list:
