@@ -1,0 +1,16 @@
+on:
+  push:
+    branches: ["main", "docs"]
+    changes:
+      - "svw-results/**"
+
+pages:
+  script:
+    - pip install -r requirements.txt
+    - mkdocs gh-deploy
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+    - docs
