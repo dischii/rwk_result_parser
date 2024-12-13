@@ -8,5 +8,13 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - run: pip install -r ${{ github.workspace }}/requirements.txt
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
       - run: mkdocs gh-deploy
