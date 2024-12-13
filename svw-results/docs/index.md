@@ -13,7 +13,7 @@ Welcome to the RWK Result Parser website. Here, you will find the latest RWK res
 The RWK Result Parser is a tool designed to fetch and display the latest results from the RWK shooting competitions. This page is still under construction and will be updated with more content soon.
 
 ## Usage
-To use the RWK Result Parser, simply navigate through the sections to find the latest results and statistics. (when they will be visible :smile:)
+To use the RWK Result Parser, simply navigate through the sections to find the latest results and   statistics.
 
 ## Contact
 For any inquiries or feedback, please go to the repo.
