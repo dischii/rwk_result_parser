@@ -6,13 +6,9 @@ on:
 
 jobs:
   pages:
-    script:
-      - pip install -r requirements.txt
-      - mkdocs gh-deploy
+    steps:
+      - run: pip install -r requirements.txt
+      - run: mkdocs gh-deploy
     artifacts:
       paths:
         - public
-    only:
-      - main
-      - docs
-      
