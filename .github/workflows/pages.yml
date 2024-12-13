@@ -1,21 +1,3 @@
-# on:
-#   push:
-#     branches: ["main", "docs"]
-#     # changes:
-#     #   - "svw-results/**"
-
-# jobs:
-#   pages:
-#     script:
-#       - pip install -r requirements.txt
-#       - mkdocs gh-deploy
-#     artifacts:
-#       paths:
-#         - public
-#     only:
-#       - main
-#       - docs
-
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
@@ -34,3 +16,22 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+# on:
+#   push:
+#     branches: ["main", "docs"]
+#     # changes:
+#     #   - "svw-results/**"
+
+# jobs:
+#   pages:
+#     script:
+#       - pip install -r requirements.txt
+#       - mkdocs gh-deploy
+#     artifacts:
+#       paths:
+#         - public
+#     only:
+#       - main
+#       - docs
+      
