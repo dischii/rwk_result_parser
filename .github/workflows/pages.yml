@@ -8,7 +8,7 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write # Required for the gh-deploy action
       pages: write
       id-token: write
     steps:
