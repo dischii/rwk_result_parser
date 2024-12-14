@@ -22,7 +22,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: git config
-        run: 
+        run: |
           git fetch
       - name: Build and deploy
         run: mkdocs build --config-file ./svw-results/mkdocs.yml
