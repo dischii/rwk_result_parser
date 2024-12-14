@@ -25,5 +25,6 @@ jobs:
         run: |
           git fetch
       - name: Build and deploy
-        run: mkdocs build --config-file ./svw-results/mkdocs.yml
-        run: mkdocs gh-deploy --config-file ./svw-results/mkdocs.yml
+        run: |
+          mkdocs build --config-file ./svw-results/mkdocs.yml
+          mkdocs gh-deploy --config-file ./svw-results/mkdocs.yml
