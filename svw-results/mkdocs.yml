@@ -1,6 +1,6 @@
 site_name: My Docs
 
 # add file ../../report_file.xlsx to the site for download
-extra:
-  - name: report_file.xlsx
-    file: ../../report_file.xlsx
+extra_files:
+  - ../../report_file.xlsx
+

@@ -20,4 +20,4 @@
 | Gauoberliga | SV Wappersdorf 1 | 7. Platz | 0 : 2 | 964,00 |
 | Gauoberliga | SV Wappersdorf 2 | 8. Platz | 0 : 2 | 909,00 |
 
-Donloadable file: [results.xlsx](../../report_file.xlsx)
+Downloadable file: [results.xlsx](../../report_file.xlsx)
