@@ -22,7 +22,7 @@ class Team:
 
     def __repr__(self):
         return f"[{self.league}] \t {self.name} \t {self.placement}. Platz \t {self.points} - {self.cut}"
-    
+
     def to_list(self):
         """ Returns the team as a list. """
         return [self.league, self.name, self.placement, self.points, self.cut]

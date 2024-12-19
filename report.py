@@ -9,7 +9,6 @@ from team import Team
 # testdata - TODO: replace test data with acutal data from results.py
 comps_for_report = []
 
-
 comps_for_report.append(Competition("SG Freystadt 1", "SV Wappersdorf 1", "1465:1489"))
 comps_for_report.append(Competition("SV Reichertshofen 2", "SV Wappersdorf 2", "1481:1493"))
 comps_for_report.append(Competition("SV Wappersdorf 3", "SV Sulzkirchen 1", "1401:1416"))
@@ -27,12 +26,10 @@ teams_for_report.append(Team("B-Klasse 2", "SV Wappersdorf 5", 7, "0:2", 1322.00
 teams_for_report.append(Team("Gauoberliga", "SV Wappersdorf 1", 7, "0:2", 964.00))
 teams_for_report.append(Team("Gauoberliga", "SV Wappersdorf 2", 8, "0:2", 909.00))
 
-    
-
 def report_competition(ws: xlsxwriter.worksheet, start_row: int, comp_list: list):
     """ Returns the competition as a list. """
     row = start_row
-    col = 0 
+    col = 0
 
     for comp in comp_list:
         print(comp)
@@ -40,11 +37,11 @@ def report_competition(ws: xlsxwriter.worksheet, start_row: int, comp_list: list
     for comp in comp_list:
         # define conditional formatting
         ws.write_row(row, col, comp.to_list())
-        
+
         home_team_cell = xlsxwriter.utility.xl_rowcol_to_cell(row, col+2)
         away_team_cell = xlsxwriter.utility.xl_rowcol_to_cell(row, col+3)
 
-        # conditional format for home team 
+        # conditional format for home team
         ws.conditional_format(home_team_cell, {'type': 'cell',
                                         'criteria': '<',
                                         'value': comp.away_score,
@@ -57,7 +54,7 @@ def report_competition(ws: xlsxwriter.worksheet, start_row: int, comp_list: list
                                         'criteria': '>',
                                         'value': comp.away_score,
                                         'format': format_win})  
-        
+
         # conditional format for away team
         ws.conditional_format(away_team_cell, {'type': 'cell',
                                         'criteria': '<',
@@ -71,16 +68,17 @@ def report_competition(ws: xlsxwriter.worksheet, start_row: int, comp_list: list
                                         'criteria': '>',
                                         'value': comp.home_score,
                                         'format': format_win})
-        
+
         row += 1
 
-
-
+# Create a workbook and add a worksheet.
 workbook = xlsxwriter.Workbook('report_file.xlsx')
-worksheet = workbook.add_worksheet() 
+worksheet = workbook.add_worksheet()
 
 
-# Formats
+# ----------------------------------------------
+# Format
+# ----------------------------------------------
 
 # Light red fill with dark red text.
 format_loose = workbook.add_format({'bg_color':   '#FFC7CE',

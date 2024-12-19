@@ -53,7 +53,7 @@ class ResultParser:
                         if team_name.strip() == team.split(".")[1].strip():
                             print(team)
 
-    def get_team_info(self, team_name: str = "SV Wappersdorf"):
+    def get_team_info(self):
         """ Extracts and prints the team information from the given HTML content. 
         Returns a list of found teams. 
         
