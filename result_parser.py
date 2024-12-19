@@ -53,7 +53,7 @@ class ResultParser:
                         if team_name.strip() == team.split(".")[1].strip():
                             print(team)
 
-    def get_team_info(self):
+    def get_team_info(self, team_name: str = "SV Wappersdorf"):
         """ Extracts and prints the team information from the given HTML content. 
         Returns a list of found teams. 
         
@@ -81,17 +81,23 @@ class ResultParser:
                         # if substring is in team variable.
                         # # team seems to be a class from beautifulsoup and not a string
                         if "SV Wappersdorf" in team:
-                            placement = team.split(".")[0]
-                            team_name_str = team.split(".")[1]
-                            points = cells[1].text.strip()
-                            cut = cells[2].text.strip()
-                            print(Team(league, team_name_str, int(placement), points, cut))
-                            found_teams.append(team)
+                            teaminstance = Team(league, team.split(".")[1], int(team.split(".")[0]), cells[1].text.strip(), cells[2].text.strip())
+                            print(teaminstance)
+                            found_teams.append(teaminstance)
         return found_teams
 
-    def get_results_from_team(self, team_name: str = "SV Wappersdorf"):
-        """ Prints the results of the competition. """
+    def get_competitions_from_team(self, team_name: str = "SV Wappersdorf"):
+        """ Prints the results of the competition.
+
+        Args:
+            team_name (str): The name of the team to search for.
+                Default: "SV Wappersdorf"
+
+        Returns:
+            list: A list of found competitions. 
+        """
         fight_results = self.soup.find_all('table', {'style': 'width:100%;'})
+        found_competitions = []
         for table in fight_results:
             rows = table.find_all('tr')
             for row in rows:
@@ -99,5 +105,6 @@ class ResultParser:
                 if len(cells) == 3:
                     comp = Competition(cells[0].text.strip(), cells[1].text.strip(), cells[2].text.strip())
                     if comp.check_team(team_name):
-                        #TODO: Define results module and return the results
+                        found_competitions.append(comp)
                         print(comp)
+        return found_competitions
