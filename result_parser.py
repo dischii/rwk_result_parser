@@ -2,8 +2,9 @@
 
 import re
 from bs4 import BeautifulSoup
-from team import Team
-from competition import Competition
+from src.models.team import Team
+from src.models.competition import Competition
+from src.models.event import Event
 
 class ResultParser:
     """ This class is used to parse the HTML content of the RWK shooting website. """
@@ -108,3 +109,20 @@ class ResultParser:
                         found_competitions.append(comp)
                         print(comp)
         return found_competitions
+
+    def get_event_infos(self):
+        """ Extracts the event information from the HTML content. 
+        
+        Returns:
+            list: A list of Event objects
+        """
+        # Find the span element with the text "Ergebnisse"
+        result_elements = self.soup.find_all('span', string=re.compile("Ergebnisse"))
+        event_infos = []
+        for span_element in result_elements:
+            # Find the parent element of the span element to get infos about the competition day
+            par_element = span_element.parent
+            infos = par_element.find_all('span')
+            event_infos.append(Event(infos[0].text.strip(), infos[1].text.strip(), infos[2].text.strip(), infos[3].text.strip()))
+
+        return event_infos
