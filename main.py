@@ -7,7 +7,7 @@ from md_report import MDReport
 
 
 # Download the HTML content
-#collector.download_html()
+collector.download_html()
 
 # Parse the HTML content
 parser = ResultParser()
