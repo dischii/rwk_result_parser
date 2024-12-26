@@ -26,20 +26,32 @@ def download_html():
     select = Select(select_element)
     select.select_by_value("SV Wappersdorf:1")
 
+    file_names = []
+
+    # get all rounds
     select_element = driver.find_element(By.XPATH, XPATH_RUNDEN_ID)
     select = Select(select_element)
-    select_options = select.options
-    round_value = select_options[1].get_attribute("value")
-    select.select_by_value(round_value)
+    cnt_rounds = len(select.options)
 
-    driver.find_element(By.XPATH, XPATH_ANZEIGEN_HTML).click()
+    for i in range(1, cnt_rounds):
+        select_element = driver.find_element(By.XPATH, XPATH_RUNDEN_ID)
+        select = Select(select_element)
+        select_options = select.options
+        round_value = select_options[i].get_attribute("value")
+        select.select_by_value(round_value)
 
-    driver.switch_to.frame("drucken")
-    iframe_soup = BeautifulSoup(driver.page_source, 'html.parser')
-    os.makedirs('temp', exist_ok=True)
-    with open(f"temp/{round_value.replace(':','_').lower()}.html", "w", encoding="utf-8") as file:
-        file.write(iframe_soup.prettify())
+        driver.find_element(By.XPATH, XPATH_ANZEIGEN_HTML).click()
 
-    driver.switch_to.default_content()
+        driver.switch_to.frame("drucken")
+        iframe_soup = BeautifulSoup(driver.page_source, 'html.parser')
+        os.makedirs('temp', exist_ok=True)
+        file_names.append(f"temp/{round_value.replace(':','_').lower()}.html")
+        with open(file_names[len(file_names)-1], "w", encoding="utf-8") as file:
+            file.write(iframe_soup.prettify())
+
+        driver.switch_to.default_content()
 
     driver.close()
+
+if __name__ == '__main__':
+    download_html()

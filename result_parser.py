@@ -8,16 +8,16 @@ from src.models.event import Event
 
 class ResultParser:
     """ This class is used to parse the HTML content of the RWK shooting website. """
-    def __init__(self):
+    def __init__(self, file):
         """ Initializes the ResultParser with the given HTML content.
             Requriement: The HTML content must be stored in a file called 'output.html'.
         """
-        self.__load_file()
+        self.__load_file(file)
         # Parse the HTML content with BeautifulSoup
         self.soup = BeautifulSoup(self.content, 'html.parser')
 
 
-    def __load_file(self, file_name = "output.html"):
+    def __load_file(self, file_name: str):
         """ Load the HTML content from the given file. """
         try:
             with open(file_name, 'r', encoding='utf-8') as file:

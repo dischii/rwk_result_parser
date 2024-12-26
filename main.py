@@ -10,7 +10,7 @@ from md_report import MDReport
 collector.download_html()
 
 # Parse the HTML content
-parser = ResultParser()
+parser = ResultParser("temp/vorrunde_1.html")
 events = parser.get_event_infos()
 parser.print_groups_for_team()
 competitions = parser.get_competitions_from_team()
