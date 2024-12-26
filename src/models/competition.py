@@ -1,4 +1,5 @@
 """ This module contains the Competition class. """
+import re
 
 class Competition:
     """ This class represents a competition. """
@@ -7,9 +8,13 @@ class Competition:
         self.home_team = home_team
         self.away_team = away_team
         self.result = result
-
-        self.home_score = int(result.split(":")[0])
-        self.away_score = int(result.split(":")[1])
+        # Check if the result is in the format 'x:y'
+        if re.match(r'\d+:\d+', self.result):
+            self.home_score = int(result.split(":")[0])
+            self.away_score = int(result.split(":")[1])
+        else:
+            self.home_score = "N/A"
+            self.away_score = "N/A"
 
     def __str__(self):
         return f"{self.home_team} - {self.away_team} -> {self.result}"
