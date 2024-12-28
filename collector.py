@@ -33,7 +33,7 @@ def download_html():
     select = Select(select_element)
     cnt_rounds = len(select.options)
 
-    for i in range(1, cnt_rounds):
+    for i in range(0, cnt_rounds-1):
         select_element = driver.find_element(By.XPATH, XPATH_RUNDEN_ID)
         select = Select(select_element)
         select_options = select.options
@@ -52,6 +52,8 @@ def download_html():
         driver.switch_to.default_content()
 
     driver.close()
+
+    return file_names
 
 if __name__ == '__main__':
     download_html()
