@@ -1,10 +1,10 @@
 """ Main file to run the program. """
-
+import os
 import collector
+
 from xlsx_report import XLSXReport
 from result_parser import ResultParser
 from md_report import MDReport
-
 
 # Download the HTML content
 html_result = collector.download_html()
@@ -17,7 +17,9 @@ for html in html_result:
     teams = parser.get_team_info()
 
     # Create Markdown
-    md = MDReport(f"svw-results/docs/results_{html.replace("html", "xlsx")}", f"{events[0].competition_string}")
+    mdfilename = os.path.basename(html).split(".")[0]
+    mdfilename = f"svw-results/docs/results_{mdfilename}"
+    md = MDReport(mdfilename, f"{events[0].competition_string}")
     md.report_competition(competitions)
     md.report_team(teams)
     md.add_file_links("files/report.xlsx", "Excel Report")
