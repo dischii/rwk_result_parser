@@ -3,4 +3,26 @@ site_description: RWK Results from SV Wappersdorf e.V.
 site_author: SV Wappersdorf e.V. (Dischner Alexander)
 
 theme: 
-  name: readthedocs
+  name: mkdocs
+
+nav: 
+ - Home: index.md
+ - RWK Ergebnisse 2024/2025: 
+      - Vorrunde 1: Ergebnisse/results_vorrunde_1.md
+      - Vorrunde 2: Ergebnisse/results_vorrunde_2.md
+      - Vorrunde 3: Ergebnisse/results_vorrunde_3.md
+      - Vorrunde 4: Ergebnisse/results_vorrunde_4.md
+      - Vorrunde 5: Ergebnisse/results_vorrunde_5.md
+      - Vorrunde 6: Ergebnisse/results_vorrunde_6.md
+      - Vorrunde 7: Ergebnisse/results_vorrunde_7.md
+      - Vorrunde 8: Ergebnisse/results_vorrunde_8.md
+      - Vorrunde 9: Ergebnisse/results_vorrunde_9.md
+      - Rückrunde 1: Ergebnisse/results_rückrunde_1.md
+      - Rückrunde 2: Ergebnisse/results_rückrunde_2.md
+      - Rückrunde 3: Ergebnisse/results_rückrunde_3.md
+      - Rückrunde 4: Ergebnisse/results_rückrunde_4.md
+      - Rückrunde 5: Ergebnisse/results_rückrunde_5.md
+      - Rückrunde 6: Ergebnisse/results_rückrunde_6.md
+      - Rückrunde 7: Ergebnisse/results_rückrunde_7.md
+      - Rückrunde 8: Ergebnisse/results_rückrunde_8.md
+      - Rückrunde 9: Ergebnisse/results_rückrunde_9.md
