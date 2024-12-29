@@ -1,2 +1,6 @@
-site_name: My Docs
+site_name: SVW Results
+site_description: RWK Results from SV Wappersdorf e.V.
+site_author: SV Wappersdorf e.V. (Dischner Alexander)
 
+theme: 
+  name: readthedocs
