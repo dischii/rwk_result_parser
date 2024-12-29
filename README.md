@@ -18,12 +18,16 @@ graph TD
 
 To install the required dependencies, create virtual environment: 
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
-Activate the virtual environment:
-```bash
-source venv/bin/activate
+Activate the virtual environment  
+```powershell
+[LINUX]
+source .venv/bin/activate
+
+[WINDOWS]
+.\.venv\Scripts\activate
 ```
 
 Install the required dependencies:
@@ -35,3 +39,5 @@ Run the script:
 ```bash
 python main.py
 ```
+
+Find artifacts in `svw-results/docs` and `temp/`.
