@@ -163,4 +163,5 @@ cython_debug/
 
 # generated files
 output.html
+/temp
 *.xlsx
