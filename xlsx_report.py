@@ -52,6 +52,10 @@ class XLSXReport:
         # Light green fill with dark green text.
         self.format_win = self.workbook.add_format({'bg_color':  '#C6EFCE',
                                         'font_color': '#006100'})
+        
+        # Bold
+        self.format_bold = self.workbook.add_format({'bold': True})
+
         # write header
         self.worksheet.write('A1', header)
 
@@ -72,7 +76,17 @@ class XLSXReport:
         # write data and conditional formatting
         for comp in comp_list:
             # define conditional formatting
-            self.worksheet.write_row(row, col, comp.to_list())
+            if "SV Wappersdorf" in comp.home_team:
+                self.worksheet.write(row, col, comp.home_team, self.format_bold)
+                self.worksheet.set_row(row, )
+                self.worksheet.write(row, col+1, comp.away_team)
+                self.worksheet.write(row, col+2, comp.home_score)
+                self.worksheet.write(row, col+3, comp.away_score)
+            elif "SV Wappersdorf" in comp.away_team:
+                self.worksheet.write(row, col, comp.home_team)
+                self.worksheet.write(row, col+1, comp.away_team, self.format_bold)
+                self.worksheet.write(row, col+2, comp.home_score)
+                self.worksheet.write(row, col+3, comp.away_score)
 
             home_team_cell = xlsxwriter.utility.xl_rowcol_to_cell(row, col+2)
             away_team_cell = xlsxwriter.utility.xl_rowcol_to_cell(row, col+3)
