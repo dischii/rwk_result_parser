@@ -52,8 +52,12 @@ class XLSXReport:
         # Light green fill with dark green text.
         self.format_win = self.workbook.add_format({'bg_color':  '#C6EFCE',
                                         'font_color': '#006100'})
-
+        # write header
         self.worksheet.write('A1', header)
+
+        # Insert an image.
+        self.worksheet.insert_image("F1", "src/images/svw-logo.png")
+
         self.last_row += 2 # 1 empty row
 
     def report_competition(self, comp_list: list):
