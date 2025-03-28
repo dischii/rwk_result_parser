@@ -9,9 +9,10 @@ class Competition:
         self.away_team = away_team
         self.result = result
         # Check if the result is in the format 'x:y'
-        if re.match(r'\d+:\d+', self.result):
-            self.home_score = int(result.split(":")[0])
-            self.away_score = int(result.split(":")[1])
+        match = re.match(r'(\d+):(\d+)', self.result)
+        if match:
+            self.home_score = int(match.group(1))
+            self.away_score = int(match.group(2))
         else:
             self.home_score = "N/A"
             self.away_score = "N/A"
