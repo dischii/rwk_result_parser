@@ -126,3 +126,24 @@ class ResultParser:
             event_infos.append(Event(infos[0].text.strip(), infos[1].text.strip(), infos[2].text.strip(), infos[3].text.strip()))
 
         return event_infos
+
+    def get_shooters_and_results(self, team_name: str = "SV Wappersdorf"):
+        """ Extracts the shooters and their results from the HTML content. 
+        
+        Returns:
+            list: A list of shooters and their results.
+        """
+        # Find the table with the results
+        result_tables = self.soup.find_all('table', {'style': 'width:100%;'})
+        for table in result_tables:
+            rows = table.find_all('tr')
+            for row in rows:
+                cells = row.find_all('th')
+                if len(cells) == 3:
+                    comp = Competition(cells[0].text.strip(), cells[1].text.strip(), cells[2].text.strip())
+                    if comp.check_team(team_name):
+                        header_table = table.find_previous('table', {'style': 'width:100%; border-top: 2px double #cdd0d4; margin-top: 15px; padding-top: 4px'})
+                        spans = header_table.find_all('span')
+                        header_event = spans[1].text.strip()
+                        header_league = spans[2].text.strip()
+                        header_competition = spans[3].text.strip()
