@@ -50,11 +50,11 @@ class MDReport:
         self.mdfile.write('The following competitions have been found:')
         self.mdfile.new_line()
 
-        comp_list = ["Home Team", "Away Team", "Home Score", "Away Score"]
+        comp_list = ["League", "Home Team", "Away Team", "Home Score", "Away Score"]
         for comp in competitions:
             comp_list.extend(comp.to_list())
 
-        self.mdfile.new_table(columns=4, rows= len(competitions) + 1, text=comp_list, text_align='center')
+        self.mdfile.new_table(columns=5, rows= len(competitions) + 1, text=comp_list, text_align='center')
         self.mdfile.new_line()
 
     def report_team(self, teams: list):
@@ -69,6 +69,38 @@ class MDReport:
 
         self.mdfile.new_table(columns=5, rows= len(teams) + 1, text=team_list, text_align='center')
         self.mdfile.new_line()
+
+    def report_shooter(self, shooters: list):
+        """ Returns the shooters as a list. """
+        adult_shooters = [shooter for shooter in shooters if "Jugendklasse" not in shooter.discipline]
+        self.mdfile.new_header(level=2, title='Shooters')
+        self.mdfile.write('The following shooters have been found:')
+        self.mdfile.new_line()
+
+        shooter_list = ["Name", "Score", "Team", "Discipline", "League"]
+        # sort shooters by score
+        adult_shooters.sort(key=lambda x: x.score, reverse=True)
+        for shooter in adult_shooters:
+            shooter_list.extend(shooter.to_list())
+
+        self.mdfile.new_table(columns=5, rows= len(adult_shooters) + 1, text=shooter_list, text_align='center')
+        self.mdfile.new_line()
+
+        # extract shooters where discipline includes Jugendklasse
+        youth_shooters = [shooter for shooter in shooters if "Jugendklasse" in shooter.discipline]
+        self.mdfile.new_header(level=2, title='Jugendklassse')
+        self.mdfile.write('The following shooters have been found in the Jugendklasse:')
+        self.mdfile.new_line()
+
+        youth_shooter_list = ["Name", "Score", "Team", "Discipline", "League"]
+        # sort shooters by score
+        youth_shooters.sort(key=lambda x: x.score, reverse=True)
+        for shooter in youth_shooters:
+            youth_shooter_list.extend(shooter.to_list())
+        
+        self.mdfile.new_table(columns=5, rows= len(youth_shooters) + 1, text=youth_shooter_list, text_align='center')
+        self.mdfile.new_line()
+
 
     def add_file_links(self, link: str, text: str):
         """ Adds a link to the given file. """
