@@ -50,11 +50,11 @@ class MDReport:
         self.mdfile.write('The following competitions have been found:')
         self.mdfile.new_line()
 
-        comp_list = ["Home Team", "Away Team", "Home Score", "Away Score"]
+        comp_list = ["League", "Home Team", "Away Team", "Home Score", "Away Score"]
         for comp in competitions:
             comp_list.extend(comp.to_list())
 
-        self.mdfile.new_table(columns=4, rows= len(competitions) + 1, text=comp_list, text_align='center')
+        self.mdfile.new_table(columns=5, rows= len(competitions) + 1, text=comp_list, text_align='center')
         self.mdfile.new_line()
 
     def report_team(self, teams: list):

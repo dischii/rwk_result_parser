@@ -108,6 +108,12 @@ class ResultParser:
                 if len(cells) == 3:
                     comp = Competition(cells[0].text.strip(), cells[1].text.strip(), cells[2].text.strip())
                     if comp.check_team(team_name):
+                        header_table = table.find_previous('table', {'style': 'width:100%; border-top: 2px double #cdd0d4; margin-top: 15px; padding-top: 4px'})
+                        spans = header_table.find_all('span')
+                        header_event = spans[1].text.strip()
+                        header_league = spans[2].text.strip()
+                        header_competition = spans[3].text.strip()
+                        comp.add_league(header_league)
                         found_competitions.append(comp)
                         print(comp)
         return found_competitions

@@ -8,6 +8,7 @@ class Competition:
         self.home_team = home_team
         self.away_team = away_team
         self.result = result
+        self.league = None
         # Check if the result is in the format 'x:y'
         match = re.match(r'(\d+):(\d+)', self.result)
         if match:
@@ -21,8 +22,13 @@ class Competition:
         return f"{self.home_team} - {self.away_team} -> {self.result}"
 
     def to_list(self):
-        """ Returns the competition as a list. """
-        return [self.home_team, self.away_team, self.home_score, self.away_score]
+        """ Returns the competition as a list.
+        If a league is present, it will be included in the list.
+        """
+        if self.league:
+            return [self.league, self.home_team, self.away_team, self.home_score, self.away_score]
+        else:
+            return [self.home_team, self.away_team, self.home_score, self.away_score]
 
     def check_team(self, team_name: str):
         """ Checks if the given team is part of the competition. 
@@ -39,3 +45,7 @@ class Competition:
         # If the team name is not found in either home or away team, return False
         return False
         # return team_name in self.home_team or team_name in self.away_team
+
+    def add_league(self, league: str):
+        """ Adds the league to the competition. """
+        self.league = league
