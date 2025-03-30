@@ -7,17 +7,6 @@
 ## Competitions
 The following competitions have been found:  
 
-<<<<<<< Updated upstream
-|Home Team|Away Team|Home Score|Away Score|
-| :---: | :---: | :---: | :---: |
-|SV Wappersdorf 1|SV Kevenhüll 1|1477|1479|
-|SV Wappersdorf 2|SV Rohrenstadt 1|1484|1436|
-|SV Wappersdorf 3|SV Woffenbach 2|1420|1461|
-|SV Weidenwang 2|SV Wappersdorf 5|1327|1326|
-|SV Wappersdorf 4|SV Thann 1|1345|1356|
-|SV Thannhausen 1|SV Wappersdorf 1|1075|1014|
-|SV Wappersdorf 2|SV Loderbach 1|1040|1107|
-=======
 |League|Home Team|Away Team|Home Score|Away Score|
 | :---: | :---: | :---: | :---: | :---: |
 |Gauliga 1|SV Wappersdorf 1|SV Kevenhüll 1|1477|1479|
@@ -27,7 +16,6 @@ The following competitions have been found:
 |B-Klasse 2|SV Wappersdorf 4|SV Thann 1|1345|1356|
 |Gauoberliga|SV Thannhausen 1|SV Wappersdorf 1|1075|1014|
 |Gauoberliga|SV Wappersdorf 2|SV Loderbach 1|1040|1107|
->>>>>>> Stashed changes
   
 
 ## Teams
@@ -43,10 +31,6 @@ The following teams have been found:
 |Gauoberliga | SV Wappersdorf 1|7|6 : 14   Punkte|Schnitt:    992,90|
 |Gauoberliga | SV Wappersdorf 2|8|2 : 18   Punkte|Schnitt:    974,10|
   
-<<<<<<< Updated upstream
-  
-Downloadable file:[Excel Report](files/report.xlsx)
-=======
 
 ## Shooters
 The following shooters have been found:  
@@ -87,4 +71,3 @@ The following shooters have been found in the Jugendklasse:
 |Zapf Sina|332|SV Wappersdorf 2|Luftgewehr 2025 Jugendklasse|Gauoberliga|
 |Vogel Romina|329|SV Wappersdorf 1|Luftgewehr 2025 Jugendklasse|Gauoberliga|
   
->>>>>>> Stashed changes

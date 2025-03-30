@@ -7,15 +7,9 @@
 ## Competitions
 The following competitions have been found:  
 
-<<<<<<< Updated upstream
-|Home Team|Away Team|Home Score|Away Score|
-| :---: | :---: | :---: | :---: |
-|SV Wappersdorf 1|SV Mimberg 1|1271|1308|
-=======
 |League|Home Team|Away Team|Home Score|Away Score|
 | :---: | :---: | :---: | :---: | :---: |
 |A-Klasse|SV Wappersdorf 1|SV Mimberg 1|1271|1308|
->>>>>>> Stashed changes
   
 
 ## Teams
@@ -25,10 +19,6 @@ The following teams have been found:
 | :---: | :---: | :---: | :---: | :---: |
 |A-Klasse | SV Wappersdorf 1|9|2 : 20   Punkte|Schnitt:    1265,09|
   
-<<<<<<< Updated upstream
-  
-Downloadable file:[Excel Report](files/report.xlsx)
-=======
 
 ## Shooters
 The following shooters have been found:  
@@ -47,4 +37,3 @@ The following shooters have been found in the Jugendklasse:
 |Name|Score|Team|Discipline|League|
 | :---: | :---: | :---: | :---: | :---: |
   
->>>>>>> Stashed changes
