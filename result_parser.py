@@ -160,7 +160,11 @@ class ResultParser:
                         header_event = spans[1].text.strip()
                         header_league = spans[2].text.strip()
                         header_competition = spans[3].text.strip()
-                    
+                        
+                        # check if competition has already results
+                        if comp.result == 'keine Ergebnisse':
+                            continue
+
                         # get table with the found team - if home team only one iteration, if away team two iterations
                         shooters_table = table.find_next('table')
                         if found_team_name == 2:
