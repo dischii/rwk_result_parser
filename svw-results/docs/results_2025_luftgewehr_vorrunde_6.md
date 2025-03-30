@@ -37,8 +37,8 @@ The following shooters have been found:
 
 |Name|Score|Team|Discipline|League|
 | :---: | :---: | :---: | :---: | :---: |
-|Negler Michael|381|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Kollmer Markus|381|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
+|Negler Michael|381|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Schuderer Theresa|376|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
 |Meier Laura|376|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
 |E Schardt Lisa|374|SV Wappersdorf 3|Luftgewehr 2025 Offene Klasse|A-Klasse 1|

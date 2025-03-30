@@ -64,8 +64,8 @@ The following shooters have been found in the Jugendklasse:
 
 |Name|Score|Team|Discipline|League|
 | :---: | :---: | :---: | :---: | :---: |
-|Gottschalk Marlene|343|SV Wappersdorf 1|Luftgewehr 2025 Jugendklasse|Gauoberliga|
 |Weidinger Sophia|343|SV Wappersdorf 1|Luftgewehr 2025 Jugendklasse|Gauoberliga|
+|Gottschalk Marlene|343|SV Wappersdorf 1|Luftgewehr 2025 Jugendklasse|Gauoberliga|
 |Pöringer Nora|319|SV Wappersdorf 2|Luftgewehr 2025 Jugendklasse|Gauoberliga|
 |Vogel Romina|310|SV Wappersdorf 1|Luftgewehr 2025 Jugendklasse|Gauoberliga|
 |E Kobling Sophia|269|SV Wappersdorf 2|Luftgewehr 2025 Jugendklasse|Gauoberliga|
