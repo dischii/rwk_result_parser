@@ -32,4 +32,10 @@ class Competition:
         Returns:
             bool: True if the team is part of the competition, False otherwise.
         """
-        return team_name in self.home_team or team_name in self.away_team
+        if team_name in self.home_team:
+            return 1
+        if team_name in self.away_team:
+            return 2
+        # If the team name is not found in either home or away team, return False
+        return False
+        # return team_name in self.home_team or team_name in self.away_team

@@ -13,3 +13,7 @@ class Shooter(BaseModel):
 
     def __str__(self):
         return f"[{self.league}] - {self.name} - {self.team_id} - {self.score} - {self.discipline}"
+
+    def to_list(self):
+        """ Returns the shooter as a list. """
+        return [self.name, self.score, self.team_id, self.discipline, self.league]

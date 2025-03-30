@@ -6,6 +6,8 @@ from src.models.team import Team
 from src.models.competition import Competition
 from src.models.event import Event
 
+from src.models.shooter import Shooter
+
 class ResultParser:
     """ This class is used to parse the HTML content of the RWK shooting website. """
     def __init__(self, file):
@@ -135,15 +137,38 @@ class ResultParser:
         """
         # Find the table with the results
         result_tables = self.soup.find_all('table', {'style': 'width:100%;'})
+        shooters_in_team = []
         for table in result_tables:
             rows = table.find_all('tr')
             for row in rows:
                 cells = row.find_all('th')
                 if len(cells) == 3:
                     comp = Competition(cells[0].text.strip(), cells[1].text.strip(), cells[2].text.strip())
-                    if comp.check_team(team_name):
+                    # get information when team is found in this competition round
+                    found_team_name = comp.check_team(team_name)
+                    # safte team name "e.g. SV Wapperdsofr 1" from the corresponding cell in table
+                    team_name_in_association = cells[found_team_name-1].text.strip()
+                    if found_team_name:
                         header_table = table.find_previous('table', {'style': 'width:100%; border-top: 2px double #cdd0d4; margin-top: 15px; padding-top: 4px'})
                         spans = header_table.find_all('span')
                         header_event = spans[1].text.strip()
                         header_league = spans[2].text.strip()
                         header_competition = spans[3].text.strip()
+                    
+                        # get table with the found team - if home team only one iteration, if away team two iterations
+                        shooters_table = table.find_next('table')
+                        if found_team_name == 2:
+                            shooters_table = shooters_table.find_next('table')
+
+                        shooters = shooters_table.find_all('tr')
+                        for shooter in shooters:
+                            cells = shooter.find_all('td')
+                            if len(cells) > 1:
+                                # get the shooter name and score
+                                shooter_name = cells[0].text.strip()
+                                score = cells[1].text.strip()
+                                                                
+                                shooters_in_team.append(Shooter(name=shooter_name, team_id=team_name_in_association, score=score, discipline=header_event, league=header_league))
+                                # print last shooter in team
+                                print(shooters_in_team[len(shooters_in_team)-1])
+        return shooters_in_team

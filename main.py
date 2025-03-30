@@ -1,4 +1,9 @@
-""" Main file to run the program. """
+""" Main file to run the program. 
+    Naming convention:
+    - competition: Wettkampt (Heim- und Auswärtsmannschaft mit Ergebnis)
+    - event: Wettkampf (Runde, Gau, Liga, Wettkampftag)
+    - team: Mannschaf mit Ergebnis in der Liga
+"""
 import os
 import collector
 
@@ -19,6 +24,7 @@ for html in html_result:
     events = parser.get_event_infos()
     competitions = parser.get_competitions_from_team()
     teams = parser.get_team_info()
+    shooters = parser.get_shooters_and_results()
 
     # Create Markdown
     mdfilename = os.path.basename(html).split(".")[0]
@@ -26,7 +32,7 @@ for html in html_result:
     md = MDReport(mdfilename, f"{events[0].competition_string}")
     md.report_competition(competitions)
     md.report_team(teams)
-    md.add_file_links("files/report.xlsx", "Excel Report")
+    md.report_shooter(shooters)
     md.create_file()
 
     # Create a report
