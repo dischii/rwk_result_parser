@@ -44,8 +44,8 @@ The following shooters have been found:
 |Braun Maximilian|370|SV Wappersdorf 5|Luftgewehr 2025 Offene Klasse|B-Klasse 2|
 |Meier Laura|368|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
 |Haberler Wolfgang|366|SV Wappersdorf 4|Luftgewehr 2025 Offene Klasse|B-Klasse 2|
-|Meier Martin|362|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Negler Michael|362|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
+|Meier Martin|362|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Dischner Sabrina|360|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
 |Erhard Claudia|356|SV Wappersdorf 3|Luftgewehr 2025 Offene Klasse|A-Klasse 1|
 |Plank Nicolas|352|SV Wappersdorf 5|Luftgewehr 2025 Offene Klasse|B-Klasse 2|

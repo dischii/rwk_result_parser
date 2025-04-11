@@ -23,7 +23,7 @@ The following teams have been found:
 
 |League|Team|Position|Result|Score|
 | :---: | :---: | :---: | :---: | :---: |
-|Gauliga 1| SV Wappersdorf 1|1|2 : 0   Punkte|Schnitt:    1489,00|
+|Gauliga 1| SV Wappersdorf 1|2|2 : 0   Punkte|Schnitt:    1489,00|
 |Gauliga 2| SV Wappersdorf 2|1|2 : 0   Punkte|Schnitt:    1493,00|
 |A-Klasse 1| SV Wappersdorf 3|10|0 : 2   Punkte|Schnitt:    1401,00|
 |B-Klasse 2| SV Wappersdorf 4|1|2 : 0   Punkte|Schnitt:    1392,00|

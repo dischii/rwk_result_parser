@@ -38,8 +38,8 @@ The following shooters have been found:
 |Name|Score|Team|Discipline|League|
 | :---: | :---: | :---: | :---: | :---: |
 |Sellerer Ramona|375|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
-|Meier Martin|374|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Negler Michael|374|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
+|Meier Martin|374|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Meier Laura|373|SV Wappersdorf 2|Luftgewehr 2025 Offene Klasse|Gauliga 2|
 |Schuderer Andreas|368|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
 |Kollmer Markus|367|SV Wappersdorf 1|Luftgewehr 2025 Offene Klasse|Gauliga 1|
